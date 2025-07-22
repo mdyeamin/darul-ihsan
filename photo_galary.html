@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <!-- tailwindcss cdn  -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- font  -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
     <style type="text/tailwindcss">
@@ -134,7 +136,7 @@
     </nav>
 
 
-    <!-- Admission guide start-->
+    <!-- photo galary start-->
     <section class="text-sm ">
         <div class="bg-primary py-24">
             <div class="max-w-6xl mx-auto">
@@ -188,11 +190,48 @@
                 </div>
             </div>
         </div>
+    </section>
+    <!-- Admission galary end -->
+    <!-- photo slider  -->
+    <section class="py-20 max-w-6xl mx-auto text-center">
+        <h2 class="text-2xl font-semibold mb-10">Annual Banquet 2021</h2>
+
+        <div class="swiper">
+            <!-- Wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <img src="images/photoslider.png" alt="Photo 1" class="w-full object-cover rounded-lg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/photoslider.png" alt="Photo 2" class="w-full object-cover rounded-lg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/photoslider.png" alt="Photo 3" class="w-full object-cover rounded-lg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/photoslider.png" alt="Photo 3" class="w-full object-cover rounded-lg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/photoslider.png" alt="Photo 3" class="w-full object-cover rounded-lg" />
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination mt-4"></div>
+
+            <!-- Navigation buttons -->
+            <div class="swiper-button-prev text-green-700"></div>
+            <div class="swiper-button-next text-green-700"></div>
+        </div>
 
 
     </section>
 
-    <!-- Admission guide end -->
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
 
@@ -246,11 +285,35 @@
             mobileAboutMenu.classList.toggle("hidden");
             aboutIcon.classList.toggle("rotate-180");
         });
-
-
-
-
-
+        
+        // swiperjs 
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            slidesPerView: 3,
+            spaceBetween: 24, // <-- gap between slides
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 16,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 24,
+                },
+            },
+        });
 
     </script>
 
