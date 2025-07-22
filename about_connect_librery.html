@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- tailwindcss cdn  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font  -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <style type="text/tailwindcss">
+        @theme {
+        --color-clifford: #da373d;
+        --color-primary:#1C914D
+      }
+    </style>
+    <style>
+        body {
+            font-family: Poppins, sans-serif;
+        }
+    </style>
+</head>
+
+<body class="">
+    <!-- top green bar -->
+    <div class="bg-primary">
+        <div class="max-w-6xl mx-auto text-white text-sm px-4 py-2 flex justify-between items-center">
+            <!-- left (mobile menu toggle) -->
+            <div class="flex items-center gap-3">
+                <button id="mobileBtn" class="lg:hidden text-xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <!-- right -->
+            <div class="flex items-center gap-4">
+                <span class="cursor-pointer">Search</span>
+                <div class="relative">
+                    <button id="langBtn" class="flex items-center gap-1">
+                        English
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div id="langMenu" class="hidden absolute bg-white text-black mt-1 rounded shadow w-28 z-50">
+                        <a href="#" class="block px-3 py-2 hover:bg-gray-100">Bangla</a>
+                        <a href="#" class="block px-3 py-2 hover:bg-gray-100">Arabic</a>
+                        <a href="#" class="block px-3 py-2 hover:bg-gray-100">Hindi</a>
+                    </div>
+                </div>
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- nav -->
+    <nav class="bg-white shadow relative">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <img src="images/logo.png" class="h-16" />
+
+            <div class="hidden lg:flex flex-grow justify-center gap-6 text-sm font-medium">
+                <a href="#" class=" ">Home</a>
+                <a href="#">Ramadan</a>
+                <div class="relative group">
+                    <button class="flex items-center gap-1">
+                        Service
+                        <i class="fas fa-chevron-down transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white mt-1 rounded shadow z-50">
+                        <a class="block px-3 py-2 hover:bg-gray-100">Service 1</a>
+                        <a class="block px-3 py-2 hover:bg-gray-100">Service 2</a>
+                    </div>
+                </div>
+                <a href="#">Progress</a>
+                <a href="#">Events</a>
+                <a href="#">Media</a>
+                <div class="relative group">
+                    <button class="flex items-center gap-1">
+                        About
+                        <i class="fas fa-chevron-down transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white mt-1 rounded shadow z-50">
+                        <a class="block px-3 py-2 hover:bg-gray-100">About Us</a>
+                        <a class="block px-3 py-2 hover:bg-gray-100">Mission</a>
+                    </div>
+                </div>
+                <a href="#">Masjid Darul Ihsan</a>
+            </div>
+            <button id="donateBtn" class="bg-primary text-white px-4 py-2 rounded ml-4">
+                Donate
+            </button>
+        </div>
+
+        <!-- mobile nav -->
+        <div id="mobileNav"
+            class="fixed top-0 left-0 h-full w-64 bg-white shadow transform -translate-x-full transition-transform duration-300 z-50 p-4 space-y-2">
+            <button id="closeMobile" class="text-right w-full">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <a class="block py-2 ">Home</a>
+            <a class="block py-2">Ramadan</a>
+
+            <!-- service dropdown toggle -->
+            <button id="mobileServiceBtn" class="w-full text-left py-2 flex items-center justify-between">
+                Service
+                <i class="fas fa-chevron-down transition-transform duration-300" id="serviceIcon"></i>
+            </button>
+            <div id="mobileServiceMenu" class="pl-4 space-y-1 hidden">
+                <a class="block py-1">Service 1</a>
+                <a class="block py-1">Service 2</a>
+            </div>
+
+            <a class="block py-2">Progress</a>
+            <a class="block py-2">Events</a>
+            <a class="block py-2">Media</a>
+
+            <!-- about dropdown toggle -->
+            <button id="mobileAboutBtn" class="w-full text-left py-2 flex items-center justify-between">
+                About
+                <i class="fas fa-chevron-down transition-transform duration-300" id="aboutIcon"></i>
+            </button>
+            <div id="mobileAboutMenu" class="pl-4 space-y-1 hidden">
+                <a class="block py-1">About Us</a>
+                <a class="block py-1">Mission</a>
+            </div>
+
+            <a class="block py-2">Masjid Darul Ihsan</a>
+            <button id="donateBtnMobile" class="w-full bg-primary text-white px-4 py-2 rounded">
+                Donate
+            </button>
+        </div>
+
+    </nav>
+
+
+    <!-- Admission guide start-->
+    <section class="text-sm ">
+        <div class="bg-primary py-24">
+            <div class="max-w-6xl mx-auto">
+                <h1 class="text-5xl text-center font-bold text-white">Darul Ihsan Community Library</h1>
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 py-10">
+            <div class="grid grid-cols-12 gap-6 items-start">
+                <!-- Left Content -->
+                <div class="col-span-12 md:col-span-7">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-2">Spring 2024 Library Hours</h2>
+                    <p class="text-sm text-gray-700 mb-2">
+                        Sundays | January 14 – May 12, 2024 | 10 am – 2 pm (holidays excepted).
+                    </p>
+
+                    <p class="text-sm text-green-600 font-semibold mb-4">
+                        Note: March 31, and April 14 – Library will be closed.
+                    </p>
+
+                    <ul class="text-sm text-gray-800 space-y-2 list-disc pl-5">
+                        <li>
+                            Open for research, information, quiet study, tours, classroom assignments, and instruction.
+                            Parents welcome!
+                        </li>
+                        <li>
+                            Library users aged 5 years through adulthood are welcome; masks must be worn if not
+                            vaccinated.
+                        </li>
+                        <li>
+                            Young children must be accompanied by an adult.
+                        </li>
+                        <li>
+                            Online Cultural resources are accessible 24/7 NOW through the virtual library.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right Image -->
+                <div class="col-span-12 md:col-span-5 flex justify-center md:justify-center">
+                    <img src="images/logo.png" alt="DICC Logo" class="w-56 h-auto max-w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Admission guide end -->
+
+    <!-- resources  -->
+    <section class="max-w-6xl mx-auto px-4 py-10">
+        <!-- Heading -->
+        <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Resources</h2>
+
+        <!-- Buttons -->
+        <div class="flex justify-center gap-4 mb-8">
+            <button class="bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700 transition-all duration-300">
+                Library Resources
+            </button>
+            <button
+                class="border border-green-600 text-green-600 px-5 py-2 rounded hover:bg-green-50 transition-all duration-300">
+                Bibliographies
+            </button>
+        </div>
+
+        <!-- Image Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div class="bg-white shadow rounded overflow-hidden">
+                <img src="images/resources.png" alt="Resource 1" class="w-full h-auto">
+            </div>
+            <div class="bg-white shadow rounded overflow-hidden">
+                <img src="images/resources.png" alt="Resource 2" class="w-full h-auto">
+            </div>
+            <div class="bg-white shadow rounded overflow-hidden">
+                <img src="images/resources.png" alt="Resource 3" class="w-full h-auto">
+            </div>
+            <div class="bg-white shadow rounded overflow-hidden">
+                <img src="images/resources.png" alt="Resource 4" class="w-full h-auto">
+            </div>
+            <div class="bg-white shadow rounded overflow-hidden">
+                <img src="images/resources.png" alt="Resource 5" class="w-full h-auto">
+            </div>
+            <div class="bg-white shadow rounded overflow-hidden">
+                <img src="images/resources.png" alt="Resource 6" class="w-full h-auto">
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <script>
+
+        // for navigation 
+        const mobileBtn = document.getElementById("mobileBtn");
+        const closeMobile = document.getElementById("closeMobile");
+        const mobileNav = document.getElementById("mobileNav");
+        const langBtn = document.getElementById("langBtn");
+        const langMenu = document.getElementById("langMenu");
+        const donateBtn = document.getElementById("donateBtn");
+        const donateBtnMobile = document.getElementById("donateBtnMobile");
+
+        const mobileServiceBtn = document.getElementById("mobileServiceBtn");
+        const mobileServiceMenu = document.getElementById("mobileServiceMenu");
+        const serviceIcon = document.getElementById("serviceIcon");
+
+        const mobileAboutBtn = document.getElementById("mobileAboutBtn");
+        const mobileAboutMenu = document.getElementById("mobileAboutMenu");
+        const aboutIcon = document.getElementById("aboutIcon");
+
+        mobileBtn.addEventListener("click", () => {
+            mobileNav.classList.remove("-translate-x-full");
+            // initially close dropdowns
+            mobileServiceMenu.classList.add("hidden");
+            serviceIcon.classList.remove("rotate-180");
+            mobileAboutMenu.classList.add("hidden");
+            aboutIcon.classList.remove("rotate-180");
+        });
+
+        closeMobile.addEventListener("click", () => {
+            mobileNav.classList.add("-translate-x-full");
+        });
+
+        langBtn.addEventListener("click", () => {
+            langMenu.classList.toggle("hidden");
+        });
+
+        donateBtn.addEventListener("click", function () {
+            this.classList.toggle("donate-active");
+        });
+        donateBtnMobile.addEventListener("click", function () {
+            this.classList.toggle("donate-active");
+        });
+
+        mobileServiceBtn.addEventListener("click", () => {
+            mobileServiceMenu.classList.toggle("hidden");
+            serviceIcon.classList.toggle("rotate-180");
+        });
+
+        mobileAboutBtn.addEventListener("click", () => {
+            mobileAboutMenu.classList.toggle("hidden");
+            aboutIcon.classList.toggle("rotate-180");
+        });
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
