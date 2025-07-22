@@ -194,8 +194,38 @@
     <!-- Admission galary end -->
     <!-- photo slider  -->
     <section class="py-20 max-w-6xl mx-auto text-center">
-        <h2 class="text-2xl font-semibold mb-10">Annual Banquet 2021</h2>
+        <h2 class="text-3xl font-semibold mb-10">Annual Banquet 2021</h2>
 
+        <div class="swiper">
+            <!-- Wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <img src="images/photoslider.png" alt="Photo 1" class="w-full object-cover rounded-lg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/photoslider.png" alt="Photo 2" class="w-full object-cover rounded-lg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/photoslider.png" alt="Photo 3" class="w-full object-cover rounded-lg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/photoslider.png" alt="Photo 3" class="w-full object-cover rounded-lg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/photoslider.png" alt="Photo 3" class="w-full object-cover rounded-lg" />
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination mt-4"></div>
+
+            <!-- Navigation buttons -->
+            <div class="swiper-button-prev text-green-700"></div>
+            <div class="swiper-button-next text-green-700"></div>
+        </div>
+
+        <h2 class="text-3xl font-semibold mb-10 my-20">Annual Banquet 2021</h2>
         <div class="swiper">
             <!-- Wrapper -->
             <div class="swiper-wrapper">
@@ -285,7 +315,7 @@
             mobileAboutMenu.classList.toggle("hidden");
             aboutIcon.classList.toggle("rotate-180");
         });
-        
+
         // swiperjs 
         const swiper = new Swiper('.swiper', {
             loop: true,
